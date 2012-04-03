@@ -2,7 +2,7 @@
 export SVN_EDITOR=/usr/bin/vim
 
 # Global
-/usr/bin/umask 077 # Most secure umask
+umask 077 # Most secure umask
 PATH="/opt/local/bin:/opt/local/sbin:${PATH}" # MacPorts
 PATH="/opt/subversion/bin:${PATH}" # SVN
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.6/bin"
