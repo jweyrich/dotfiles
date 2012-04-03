@@ -1,0 +1,27 @@
+[user]
+	name = Jardel Weyrich
+	email = jweyrich@gmail.com
+[core]
+	editor = vim
+	excludesfile = /Users/jweyrich/.gitignore
+	autocrlf = input
+[branch]
+	autosetupmerge = true
+[github]
+	user = jweyrich
+	token = <suppressed>
+[color]
+	ui = auto
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = jweyrich@gmail.com
+	smtpserverport = 587
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	un = reset HEAD
+	unstage = reset HEAD
+	unco = reset --hard HEAD
+	undo-commit = reset --hard HEAD
