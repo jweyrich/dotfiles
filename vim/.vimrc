@@ -1,46 +1,46 @@
-" Set UTF-8 encoding without BOM
+" Set UTF-8 encoding without BOM.
 set encoding=utf-8 nobomb
 
 " Show the filename in the window titlebar.
 set title
 
-" Show line numbers
+" Show line numbers.
 set number
 
-" Show filename at the bottom
-set laststatus=2 " Always show the status line in inactive windows
+" Show filename at the bottom.
+set laststatus=2 " Always show the status line in inactive windows.
 set modeline
 set statusline=%F%m%r%h%w\ L:%l\ C:%c%V\ %=\ ASCII:%b\ OFF:%o\ [%p%%]\ TYPE:%{&ff}
 
-" Set tab to N space
+" Set tab to N space.
 set tabstop=4
 set softtabstop=4
 
-" Syntax highlight
+" Syntax highlight.
 syntax on
 
-" Set auto-indenting on for programming
+" Set auto-indenting on for programming.
 set autoindent
 
-" Turn off compatibility with the old vi
+" Turn off compatibility with the old vi.
 set nocompatible
 
-" Make that backspace key work the way it should
+" Make that backspace key work the way it should.
 set backspace=indent,eol,start
 
 " Automatically show matching brackets. works like it does in bbedit.
 set showmatch
 
-" Hide the mouse pointer while typing
+" Hide the mouse pointer while typing.
 set mousehide
 
-" Search wraps around end of file
+" Search wraps around end of file.
 set wrapscan
 
-" Highlighting all the search pattern matches. Use nohlsearch to turn off
+" Highlighting all the search pattern matches. Use nohlsearch to turn off.
 set hlsearch
 
-" Turn off auto-indent when pasting text
+" Turn off auto-indent when pasting text.
 set pastetoggle=<F3>
 
 " Character for CLI expansion (TAB-completion).
@@ -50,7 +50,7 @@ set wildmenu
 " Complete only until point of ambiguity.
 set wildmode=list:longest
 
-" Turning completion on. Use CTRL-X O
+" Turning completion on. Use CTRL-X O.
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
