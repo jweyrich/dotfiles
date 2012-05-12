@@ -1,3 +1,9 @@
+" Set UTF-8 encoding without BOM
+set encoding=utf-8 nobomb
+
+" Show the filename in the window titlebar.
+set title
+
 " Show line numbers
 set number
 
@@ -33,6 +39,13 @@ set hlsearch
 
 " Turn off auto-indent when pasting text
 set pastetoggle=<F3>
+
+" Character for CLI expansion (TAB-completion).
+set wildchar=<TAB>
+" Hitting TAB in command mode will show possible completions above command line.
+set wildmenu
+" Complete only until point of ambiguity.
+set wildmode=list:longest
 
 " Turning completion on. Use CTRL-X O
 autocmd FileType python set omnifunc=pythoncomplete#Complete
