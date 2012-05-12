@@ -34,6 +34,9 @@ set showmatch
 " Hide the mouse pointer while typing
 set mousehide
 
+" Search wraps around end of file
+set wrapscan
+
 " Highlighting all the search pattern matches. Use nohlsearch to turn off
 set hlsearch
 
