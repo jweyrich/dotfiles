@@ -40,7 +40,7 @@ append_to_path "/Library/Frameworks/Python.framework/Versions/2.6/bin"
 append_to_path "/usr/local/mysql/bin"
 
 # Personal utilities
-append_to_path "~/bin"
+append_to_path "$HOME/bin"
 
 # SCons
 append_to_path "~/bin/scons/bin"
