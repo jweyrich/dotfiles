@@ -21,7 +21,6 @@
 	st = status
 	ci = commit
 	co = checkout
-	un = reset HEAD
+	unadd = reset
 	unstage = reset HEAD
-	unco = reset --hard HEAD
-	undo-commit = reset --hard HEAD
+	uncommit = reset --hard HEAD
