@@ -7,9 +7,6 @@
 	autocrlf = input
 [branch]
 	autosetupmerge = true
-[github]
-	user = jweyrich
-	token = <suppressed>
 [color]
 	ui = auto
 [sendemail]
