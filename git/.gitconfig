@@ -21,3 +21,4 @@
 	unadd = reset
 	unstage = reset HEAD
 	uncommit = reset --hard HEAD
+	showstash = stash show -p
