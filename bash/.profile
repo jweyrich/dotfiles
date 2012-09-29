@@ -1,29 +1,26 @@
 # Prepend directory to path, if it exists
-function prepend_to_path()
-{
+function prepend_to_path() {
 	if [[ -d "${1}" ]]; then
 		PATH=${1}:${PATH}
 	fi
 }
 
 # Append directory to path, if it exists
-function append_to_path()
-{
+function append_to_path() {
 	if [[ -d "${1}" ]]; then
 		PATH=${PATH}:${1}
 	fi
 }
 
 # Source script, if it exists
-function source_script()
-{
+function source_script() {
 	if [[ -f "${1}" ]]; then
 		source ${1}
 	fi
 }
 
 # Global
-umask 077 # Most secure umask
+umask 022
 
 # Subversion
 export SVN_EDITOR=/usr/bin/vim
