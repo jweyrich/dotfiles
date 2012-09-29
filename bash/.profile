@@ -49,5 +49,9 @@ append_to_path "${ANT_HOME}/bin"
 export PATH
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-alias ls="/bin/ls -CFG"
-alias grep="/usr/bin/grep --color"
+
+# Execute .bashrc if it exists
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
