@@ -3,7 +3,7 @@
 	email = jweyrich@gmail.com
 [core]
 	editor = vim
-	excludesfile = /Users/jweyrich/.gitignore
+	excludesfile = ~/.gitignore
 	autocrlf = input
 [branch]
 	autosetupmerge = true
