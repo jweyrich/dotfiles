@@ -25,4 +25,3 @@ bold_cyan=$(tput bold; tput setaf 6)
 
 white=$(tput setaf 7)
 bold_white=$(tput bold; tput setaf 7)
-

@@ -19,6 +19,11 @@ function source_script() {
 	fi
 }
 
+# Convert manpage to PDF and open it in Prewiew
+function pman {
+	man -t "${1}" | open -f -a /Applications/Preview.app
+}
+
 # Global
 umask 022
 
