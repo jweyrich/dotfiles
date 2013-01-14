@@ -40,8 +40,11 @@ set wrapscan
 " Highlighting all the search pattern matches. Use nohlsearch to turn off.
 set hlsearch
 
+" Show a visual feedback in the status line
+nnoremap <F2> :set invpaste paste?<CR>
 " Turn off auto-indent when pasting text.
-set pastetoggle=<F3>
+set pastetoggle=<F2>
+set showmode
 
 " Character for CLI expansion (TAB-completion).
 set wildchar=<TAB>
