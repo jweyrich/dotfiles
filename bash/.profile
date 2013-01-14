@@ -48,7 +48,7 @@ append_to_path "$HOME/bin"
 append_to_path "~/bin/scons/bin"
 
 # Apache Ant
-export ANT_HOME="/usr/local/ant"
+export ANT_HOME="/usr/share/ant"
 append_to_path "${ANT_HOME}/bin"
 
 export PATH
