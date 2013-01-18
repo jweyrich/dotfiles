@@ -65,3 +65,10 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 " ...
 set tw=0 wrap linebreak
 
+" Map HOME and END
+map <ESC>[H <Home>
+map <ESC>[F <End>
+imap <ESC>[H <C-O><Home>
+imap <ESC>[F <C-O><End>
+cmap <ESC>[H <Home>
+cmap <ESC>[F <End>
