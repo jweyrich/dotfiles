@@ -56,7 +56,9 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Execute .bashrc if it exists
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+if [ "$BASH" ]; then
+	if [ -f ~/.bashrc ]; then
+		. ~/.bashrc
+	fi
 fi
 
