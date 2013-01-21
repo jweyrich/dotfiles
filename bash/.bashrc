@@ -12,7 +12,7 @@ source ~/.git-prompt.sh
 source ~/.bash_colors
 
 # Show the current branch in prompt
-export PS1='\[${magenta}\]\u@\h$\[${white}\]:\W$(__git_ps1 " [* \[${green}\]%s\[${reset}\]]")\$ '
+export PS1='\[${magenta}\]\u@\h$\[${reset}\]:\W$(__git_ps1 " [* \[${green}\]%s\[${reset}\]]")\$ '
 
 # Aliases
 alias ls="/bin/ls -CFG"
