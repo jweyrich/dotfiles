@@ -1,8 +1,7 @@
 #!/bin/bash
 find . -print 2>/dev/null | awk '!/\.$/ { \
 	for (i=1; i<NF; i++) { \
-		d = 4; \
-		printf("%"d"s", "|") \
+		printf("%4s", "|") \
 	} \
 	print "-- "$NF \
 }' FS='/'
