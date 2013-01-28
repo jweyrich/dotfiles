@@ -1,0 +1,27 @@
+#!/bin/bash
+
+usage() {
+	program=`basename $0`
+	echo "usage: $program -p pid"
+	exit 2
+}
+
+illegal_opt() {
+	program=`basename $0`
+	echo "$program: illegal option -- $@"
+	usage
+}
+
+while [ $# -gt 0 ]
+do
+	case $1 in
+		-p) pid="$2"; shift ;;
+		-h) usage ;;
+		-*|*) illegal_opt $1 ;;
+	esac
+	shift
+done
+
+if [ -z "$pid" ]; then usage; fi
+
+/usr/sbin/lsof -Pn -p ``$pid''
