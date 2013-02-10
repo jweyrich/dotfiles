@@ -15,10 +15,19 @@
 	smtpuser = jweyrich@gmail.com
 	smtpserverport = 587
 [alias]
+	remotes = remote -v
+	branches = branch -a
+	tags = tag -l
+	root = rev-parse --show-toplevel
 	st = status
 	ci = commit
 	co = checkout
+	fo = fetch origin
+	fu = fetch upstream
+	po = push origin
+	pu = push upstream
 	unadd = reset
+	unadd-empty = rm -r --cached # git-reset causes "fatal: Failed to resolve 'HEAD' as a valid ref."
 	unstage = reset HEAD
 	uncommit = reset --hard HEAD
 	showstash = stash show -p
