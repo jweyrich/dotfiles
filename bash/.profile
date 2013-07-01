@@ -24,6 +24,11 @@ function pman {
 	man -t "${1}" | open -f -a /Applications/Preview.app
 }
 
+# Print the current Python site-packages directory
+function sitepackages() {
+	python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"
+}
+
 # Global
 umask 022
 
