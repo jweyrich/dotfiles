@@ -1,3 +1,8 @@
+"
+" AUTHOR: Jardel Weyrich <jweyrich@gmail.com>
+" URL: https://github.com/jweyrich/dotfiles/
+"
+
 " Set UTF-8 encoding without BOM.
 set encoding=utf-8 nobomb
 
@@ -74,3 +79,6 @@ cmap <ESC>[H <Home>
 cmap <ESC>[F <End>
 
 source ~/.vim_plugins/highlight_trailing_whitespace.vim
+
+" Auto-reload ~/.vimrc after saving it.
+autocmd! bufwritepost .vimrc source ~/.vimrc
