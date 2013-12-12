@@ -78,12 +78,19 @@ imap <ESC>[F <C-O><End>
 cmap <ESC>[H <Home>
 cmap <ESC>[F <End>
 
-" Map PGUP and PGDOWN
+" Map PGUP (Fn + Shift + Up) and PGDOWN (Fn + Shift + Down)
 map <ESC>[5~ <C-U>
 map <ESC>[6~ <C-D>
 imap <ESC>[5~ <C-O><C-U>
 imap <ESC>[6~ <C-O><C-D>
 set nostartofline " Preseve column when moving through lines.
+
+" Map Ctrl+d to Forward Delete (insert mode only)
+inoremap <C-d> <Del>
+
+" Map Fn+Delete to Forward Delete (normal and insert modes)
+nmap <ESC>[3~ x
+imap <ESC>[3~ <Del>
 
 source ~/.vim_plugins/highlight_trailing_whitespace.vim
 
