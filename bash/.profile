@@ -55,10 +55,6 @@ append_to_path "~/bin/scons/bin"
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# Apache Ant
-#export ANT_HOME="/usr/share/ant"
-#append_to_path "${ANT_HOME}/bin"
-
 export PATH
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
