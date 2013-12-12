@@ -29,5 +29,5 @@
 	unadd = reset
 	unadd-empty = rm -r --cached # git-reset causes "fatal: Failed to resolve 'HEAD' as a valid ref."
 	unstage = reset HEAD
-	uncommit = reset --hard HEAD
+	uncommit = reset --soft HEAD
 	showstash = stash show -p
