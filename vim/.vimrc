@@ -78,6 +78,13 @@ imap <ESC>[F <C-O><End>
 cmap <ESC>[H <Home>
 cmap <ESC>[F <End>
 
+" Map PGUP and PGDOWN
+map <ESC>[5~ <C-U>
+map <ESC>[6~ <C-D>
+imap <ESC>[5~ <C-O><C-U>
+imap <ESC>[6~ <C-O><C-D>
+set nostartofline " Preseve column when moving through lines.
+
 source ~/.vim_plugins/highlight_trailing_whitespace.vim
 
 " Auto-reload ~/.vimrc after saving it.
