@@ -31,3 +31,5 @@
 	unstage = reset HEAD
 	uncommit = reset --soft HEAD
 	showstash = stash show -p
+	last-commit-sha = rev-parse HEAD # Returns a 40-digit commit SHA
+	last-commit-short-sha = rev-parse --short HEAD # Returns a 7-digit commit SHA
