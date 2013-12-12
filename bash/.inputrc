@@ -1,0 +1,2 @@
+# Map Fn-Delete to Forward Delete
+"\e[3~": delete-char
