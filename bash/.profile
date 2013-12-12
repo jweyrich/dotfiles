@@ -36,7 +36,7 @@ umask 022
 export SVN_EDITOR=/usr/bin/vim
 prepend_to_path "/opt/subversion/bin"
 
-# MacPorts
+# MacPorts & Homebrew
 prepend_to_path "/opt/local/sbin"
 prepend_to_path "/opt/local/bin"
 
@@ -52,9 +52,12 @@ append_to_path "$HOME/bin"
 # SCons
 append_to_path "~/bin/scons/bin"
 
+# Java
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # Apache Ant
-export ANT_HOME="/usr/share/ant"
-append_to_path "${ANT_HOME}/bin"
+#export ANT_HOME="/usr/share/ant"
+#append_to_path "${ANT_HOME}/bin"
 
 export PATH
 export LC_ALL=en_US.UTF-8
