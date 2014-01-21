@@ -45,6 +45,7 @@ set wrapscan
 " Highlighting all the search pattern matches. Use nohlsearch to turn off.
 set hlsearch
 
+" To make <F2> work as expected, your terminal MUST BE xterm, not ansi.
 " Show a visual feedback in the status line
 nnoremap <F2> :set invpaste paste?<CR>
 " Turn off auto-indent when pasting text.
