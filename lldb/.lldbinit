@@ -1,0 +1,5 @@
+# Get a recursive hierarchy of any view in your iOS application.
+# Set a breakpoint in a view controller, and type rd self.view.
+# Author: Rob Mayoff
+# Original URL: https://gist.github.com/mattt/4148342/#comment-608387
+command regex rd 's/^[[:space:]]*$/po [[[UIApplication sharedApplication] keyWindow] recursiveDescription]/' 's/^(.+)$/po [%1 recursiveDescription]/'
