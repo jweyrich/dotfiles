@@ -19,7 +19,7 @@
 	branches = branch -a
 	tags = tag -l
 	root = rev-parse --show-toplevel
-	st = status
+	st = status -sb
 	ci = commit
 	co = checkout
 	fo = fetch origin
@@ -33,5 +33,7 @@
 	showstash = stash show -p
 	last-commit-sha = rev-parse HEAD # Returns a 40-digit commit SHA
 	last-commit-short-sha = rev-parse --short HEAD # Returns a 7-digit commit SHA
+	# Credits for pretty-log go to Palesz - http://stackoverflow.com/users/88355/palesz
+	pretty-log = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [push]
 	default = simple
