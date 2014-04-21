@@ -1,0 +1,15 @@
+#!/bin/bash
+
+usage() {
+	program=`basename $0`
+	echo "usage: $program <output-file> <input-file>"
+	exit 2
+}
+
+if [ -z "$1" ]; then usage; fi
+if [ -z "$2" ]; then usage; fi
+
+echo $1
+echo $2
+
+gpg -o $1 -d $2
