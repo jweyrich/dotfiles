@@ -9,6 +9,8 @@
 	autosetupmerge = true
 [color]
 	ui = auto
+[diff]
+	algorithm = patience
 [sendemail]
 	smtpencryption = tls
 	smtpserver = smtp.gmail.com
