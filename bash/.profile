@@ -55,6 +55,10 @@ append_to_path "~/bin/scons/bin"
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+# Go
+export GOPATH="$HOME/go"
+append_to_path $GOPATH
+
 # Docker
 export DOCKER_HOST=tcp://127.0.0.1:4243
 
