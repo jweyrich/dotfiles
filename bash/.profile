@@ -36,9 +36,9 @@ umask 022
 export SVN_EDITOR=/usr/bin/vim
 prepend_to_path "/opt/subversion/bin"
 
-# MacPorts & Homebrew
-prepend_to_path "/opt/local/sbin"
-prepend_to_path "/opt/local/bin"
+# Homebrew
+prepend_to_path "/usr/local/bin"
+prepend_to_path "/usr/local/sbin"
 
 # Python
 append_to_path "/Library/Frameworks/Python.framework/Versions/2.6/bin"
