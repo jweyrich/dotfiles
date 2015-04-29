@@ -29,6 +29,16 @@ function sitepackages() {
 	python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"
 }
 
+vscode () {
+    if [[ $# = 0 ]]
+    then
+        open -a "Visual Studio Code"
+    else
+        [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
+        open -a "Visual Studio Code" --args "$F"
+    fi
+}
+
 # Global
 umask 022
 
