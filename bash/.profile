@@ -52,6 +52,9 @@ append_to_path "$HOME/bin"
 # SCons
 append_to_path "~/bin/scons/bin"
 
+# AWS CLI
+append_to_path "~/bin/AWS-ElasticBeanstalk-CLI/eb/macosx/python2.7/"
+
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
