@@ -18,3 +18,4 @@ export PS1='\[${magenta}\]\u@\h$\[${reset}\]:\W$(__git_ps1 " [* \[${green}\]%s\[
 alias ls="/bin/ls -CFG"
 alias grep="/usr/bin/grep --color"
 alias flushdns="dscacheutil -flushcache"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
