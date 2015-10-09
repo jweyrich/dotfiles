@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage() {
-        program=`basename $0`
+        program=$(basename "$0")
         echo "usage: $program <destination-email> <input-file>"
         exit 2
 }
@@ -9,4 +9,4 @@ usage() {
 if [ -z "$1" ]; then usage; fi
 if [ -z "$2" ]; then usage; fi
 
-gpg -a -e -r $1 $2
+gpg -a -e -r "$1" "$2"
