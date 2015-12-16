@@ -38,6 +38,9 @@ if ! is_cygwin ; then
 	alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 fi
 
+# Bash completion (only for Bash)
+complete -C aws_completer aws
+
 # For now, I want only Cygwin to automatically start the ssh-agent .
 if is_cygwin ; then
 	source ~/.ssh-agent-start-cygwin.sh
