@@ -7,7 +7,7 @@ shopt -u mailwarn
 shopt -s no_empty_cmd_completion
 
 # Git completion & prompt
-source ~/.git-completion.sh
+source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
 # Colors
