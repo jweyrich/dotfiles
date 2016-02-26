@@ -13,11 +13,25 @@ source ~/.git-prompt.sh
 # Colors
 source ~/.bash_colors
 
-# Show the current branch in prompt
-if ! is_cygwin ; then
-	export PS1='\[${magenta}\]\u@\h$\[${reset}\]:\W$(__git_ps1 " [* \[${green}\]%s\[${reset}\]]")\$ '
-else
-	export PS1='\u@\h$:\W$(__git_ps1 " [* %s]")\$ '
+# Prompt
+function _update_ps1() {
+	# Show the current branch in prompt
+	if ! is_cygwin ; then
+		if [ -f ~/powerline-shell.py ]; then
+			# Use powerline-shell to configure an awesome prompt - depends on powerline-shell
+			PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+		else
+			# Show the current branch in prompt - depends on git-prompt.sh
+			PS1='\[${magenta}\]\u@\h$\[${reset}\]:\W$(__git_ps1 " [* \[${green}\]%s\[${reset}\]]")\$ '
+		fi
+	else
+		# Show the current branch in prompt - depends on git-prompt.sh
+		PS1='\u@\h$:\W$(__git_ps1 " [* %s]")\$ '
+	fi
+}
+
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
 # Aliases
