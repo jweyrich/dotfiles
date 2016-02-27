@@ -1,0 +1,31 @@
+#!/bin/bash
+
+usage() {
+	program=`basename $0`
+	echo "usage: $program -u url [-o output-file] [-s speed-limit]"
+	exit 2
+}
+
+illegal_opt() {
+	program=`basename $0`
+	echo "$program: illegal option -- $@"
+	usage
+}
+
+while [ $# -gt 0 ]
+do
+	case $1 in
+		-u) url="$2"; shift ;;
+		-o) outfile="-o $2"; shift ;;
+		-s) limitrate="--limit-rate $2"; shift ;;
+		-v) verbose="-v"; shift ;;
+		-h) usage ;;
+		-*|*) illegal_opt $1 ;;
+	esac
+	shift
+done
+
+if [ -z "$url" ]; then usage; fi
+if [ -z "$outfile" ]; then outfile="-o `basename $url`"; fi
+
+/usr/bin/curl $verbose $limitrate -C - $url $outfile;

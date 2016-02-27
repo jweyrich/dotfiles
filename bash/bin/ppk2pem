@@ -1,0 +1,66 @@
+#!/bin/bash
+
+usage() {
+	program=`basename $0`
+	echo "usage: $program -i cert_file.ppk [-p private.key] [-c public.crt]"
+	exit 2
+}
+
+illegal_opt() {
+	program=`basename $0`
+	echo "$program: illegal option -- $@"
+	usage
+}
+
+while [ $# -gt 0 ]
+do
+	case $1 in
+		-i) arg_ppk_file="$2"; shift ;;
+		-p) arg_priv_key_file="$2"; shift ;;
+		-c) arg_pub_key_file="$2"; shift ;;
+		-h) usage ;;
+		-*|*) illegal_opt $1 ;;
+	esac
+	shift
+done
+
+if [ -z "$arg_ppk_file" ]; then usage; fi
+
+PUTTYGEN=$(type -c puttygen)
+
+if [ -z $PUTTYGEN ]; then
+	echo 'Missing puttygen binary?'
+	exit 1
+fi
+
+DIRNAME=$(/usr/bin/dirname "$arg_ppk_file")
+FILENAME=$(/usr/bin/basename "$arg_ppk_file")
+FILENAME_NO_EXT="${FILENAME%%.*}"
+
+# Private key argument was informed?
+if [ -z "$arg_priv_key_file" ]; then
+	OUT_PRIV_KEY_FILE="$DIRNAME/$FILENAME_NO_EXT.key"
+else
+	OUT_PRIV_KEY_FILE="$arg_priv_key_file"
+fi
+
+# Public key argument was informed?
+if [ -z "$arg_pub_key_file" ]; then
+	OUT_PUB_KEY_FILE="$DIRNAME/$FILENAME_NO_EXT.crt"
+else
+	OUT_PUB_KEY_FILE="$arg_pub_key_file"
+fi
+
+# Missing something?
+if [ -z "$OUT_PUB_KEY_FILE" ] || [ -z "$OUT_PRIV_KEY_FILE" ]; then
+	usage
+fi
+
+# Convert them.
+$PUTTYGEN "$1" -O public-openssh -o "$OUT_PUB_KEY_FILE"
+$PUTTYGEN "$1" -O private-openssh -o "$OUT_PRIV_KEY_FILE"
+
+# Change permission of private file if it was really created
+if [ -f "$OUT_PRIV_KEY_FILE" ]; then
+	/bin/chmod go-rw "$OUT_PRIV_KEY_FILE"
+fi
