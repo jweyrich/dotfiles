@@ -1,10 +1,11 @@
 #!/bin/bash
 cp -i .bash-detect-system.sh ~/
-cp -i .bashrc ~/
 cp -i .bash_colors ~/
-cp -i .profile ~/
-cp -i .git-completion.sh ~/
+cp -i .bashrc ~/
+cp -i .git-completion.bash ~/
 cp -i .git-prompt.sh ~/
+cp -i .inputrc ~/
+cp -i .profile ~/
 cp -ir bin ~/
 
 source ~/.bash-detect-system.sh
