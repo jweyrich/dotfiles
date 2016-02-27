@@ -44,33 +44,28 @@ umask 022
 
 # Subversion
 export SVN_EDITOR=/usr/bin/vim
-prepend_to_path "/opt/subversion/bin"
 
 # Homebrew
-prepend_to_path "/usr/local/bin"
-prepend_to_path "/usr/local/sbin"
-
-# Python
-append_to_path "/Library/Frameworks/Python.framework/Versions/2.6/bin"
+test -d "/usr/local/bin" && prepend_to_path "/usr/local/bin"
+test -d "/usr/local/sbin" && prepend_to_path "/usr/local/sbin"
 
 # MySQL
-append_to_path "/usr/local/mysql/bin"
+test -d "/usr/local/mysql/bin" && append_to_path "/usr/local/mysql/bin"
 
 # Personal utilities
-append_to_path "$HOME/bin"
+test -d "$HOME/bin" && append_to_path "$HOME/bin"
 
 # SCons
-append_to_path "~/bin/scons/bin"
+test -d "$HOME/bin/scons/bin/" && append_to_path "$HOME/bin/scons/bin/"
 
 # AWS CLI
-append_to_path "~/bin/AWS-ElasticBeanstalk-CLI/eb/macosx/python2.7/"
+test -d "$HOME/bin/AWS-ElasticBeanstalk-CLI/eb/macosx/python2.7/" && append_to_path "$HOME/bin/AWS-ElasticBeanstalk-CLI/eb/macosx/python2.7/"
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Go
-export GOPATH="$HOME/go"
-append_to_path $GOPATH
+test -d "$HOME/go" && export GOPATH="$HOME/go" && append_to_path "$GOPATH"
 
 # Docker
 export DOCKER_HOST=tcp://127.0.0.1:4243
@@ -81,8 +76,8 @@ export LANG=en_US.UTF-8
 
 # Execute .bashrc if it exists
 if [ "$BASH" ]; then
-	if [ -f ~/.bashrc ]; then
-		. ~/.bashrc
+	if [ -f $HOME/.bashrc ]; then
+		. $HOME/.bashrc
 	fi
 fi
 
