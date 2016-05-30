@@ -1,10 +1,14 @@
 source ~/.bash-detect-system.sh
 
 # Options
+shopt -s histappend # Append to the history instead of overwriting it.
 shopt -s checkhash
 shopt -s extglob
 shopt -u mailwarn
 shopt -s no_empty_cmd_completion
+
+# Don't log duplicate commands to the history.
+export HISTCONTROL=ignoredups:erasedups
 
 # Git completion & prompt
 source ~/.git-completion.bash
