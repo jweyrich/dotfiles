@@ -43,5 +43,6 @@
 	last-commit-short-sha = rev-parse --short HEAD # Returns a 7-digit commit SHA
 	# Credits for pretty-log go to Palesz - http://stackoverflow.com/users/88355/palesz
 	pretty-log = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	nfm = "!f(){ git -c core.fileMode=false $@; };f" # Ignore file mode changes. Example: git nfm status
 [push]
 	default = simple
