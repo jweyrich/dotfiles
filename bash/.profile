@@ -20,7 +20,7 @@ function source_script() {
 }
 
 # Convert manpage to PDF and open it in Prewiew
-function pman {
+function pman() {
 	man -t "${1}" | open -f -a /Applications/Preview.app
 }
 
@@ -29,7 +29,13 @@ function sitepackages() {
 	python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"
 }
 
-vscode () {
+# Shamelessly borrowed from https://github.com/paulirish/dotfiles/blob/606d85f083/.functions#L27 - Thanks!
+# cd into whatever is the forefront Finder window.
+function cdf() {  # short for cdfinder
+	cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
+
+function vscode() {
     if [[ $# = 0 ]]
     then
         open -a "Visual Studio Code"
