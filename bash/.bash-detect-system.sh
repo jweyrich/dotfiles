@@ -1,10 +1,13 @@
 detect_system () {
 	test -z "$DETECTED_SYSTEM" && {
 		case "$(uname -s)" in
+			Linux)
+				DETECTED_SYSTEM="linux"
+			;;
 			Darwin)
 				DETECTED_SYSTEM="macosx"
 			;;
-			MINGW*)
+			MINGW*|CYGWIN*)
 				DETECTED_SYSTEM="cygwin"
 			;;
 			*)
