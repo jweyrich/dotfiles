@@ -10,10 +10,6 @@ shopt -s no_empty_cmd_completion
 # Don't log duplicate commands to the history.
 export HISTCONTROL=ignoredups:erasedups
 
-# Git completion & prompt
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
-
 # Multiple completions using bash-completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	. $(brew --prefix)/etc/bash_completion
@@ -60,9 +56,6 @@ fi
 if ! is_cygwin ; then
 	alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 fi
-
-# AWS CLI completion (only for Bash)
-complete -C aws_completer aws
 
 # For now, I want only Cygwin to automatically start the ssh-agent .
 if is_cygwin ; then
