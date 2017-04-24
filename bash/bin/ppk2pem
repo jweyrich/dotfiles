@@ -26,7 +26,7 @@ done
 
 if [ -z "$arg_ppk_file" ]; then usage; fi
 
-PUTTYGEN=$(type -c puttygen)
+PUTTYGEN=$(type -p puttygen)
 
 if [ -z $PUTTYGEN ]; then
 	echo 'Missing puttygen binary?'
@@ -57,8 +57,8 @@ if [ -z "$OUT_PUB_KEY_FILE" ] || [ -z "$OUT_PRIV_KEY_FILE" ]; then
 fi
 
 # Convert them.
-$PUTTYGEN "$1" -O public-openssh -o "$OUT_PUB_KEY_FILE"
-$PUTTYGEN "$1" -O private-openssh -o "$OUT_PRIV_KEY_FILE"
+$PUTTYGEN "$arg_ppk_file" -O public-openssh -o "$OUT_PUB_KEY_FILE"
+$PUTTYGEN "$arg_ppk_file" -O private-openssh -o "$OUT_PRIV_KEY_FILE"
 
 # Change permission of private file if it was really created
 if [ -f "$OUT_PRIV_KEY_FILE" ]; then
