@@ -8,7 +8,7 @@ cp -i .profile ~/
 cp -ir bin ~/
 
 if [ ! -z $(brew --prefix) ]; then HAS_HOMEBREW=true; fi
-if [ ! -z $(which pip) ]; then HAS_PIP=true; fi
+if [ ! -z $(which pip3) ]; then HAS_PIP=true; fi
 if [ ! -z $(which npm) ]; then HAS_NPM=true; fi
 
 if [ "$HAS_HOMEBREW" == true ]; then
@@ -32,7 +32,7 @@ fi
 if [ "$HAS_PIP" == true ]; then
 	if [ "$INSTALLED_POWERLINE_STATUS" != true ]; then
 		echo "Installing powerline-status..."
-		pip install --user powerline-status && INSTALLED_POWERLINE_STATUS=true
+		pip3 install --user powerline-status && INSTALLED_POWERLINE_STATUS=true
 	fi
 fi
 
