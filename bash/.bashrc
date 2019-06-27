@@ -22,9 +22,9 @@ source ~/.bash_colors
 function _update_ps1() {
 	# Show the current branch in prompt
 	if ! is_cygwin ; then
-		if [ -f ~/powerline-shell.py ]; then
-			# Use powerline-shell to configure an awesome prompt - depends on powerline-shell
-			PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+		if [ -f "$GOPATH/bin/powerline-go" ]; then
+			# Use powerline-go to configure an awesome prompt - depends on powerline-go
+			PS1="$($GOPATH/bin/powerline-go -error $? -modules nix-shell,venv,user,host,ssh,cwd,docker,kube,perms,git,hg,jobs,exit,root,vgo)"
 		else
 			# Show the current branch in prompt - depends on git-prompt.sh
 			PS1='\[${magenta}\]\u@\h$\[${reset}\]:\W$(__git_ps1 " [* \[${green}\]%s\[${reset}\]]")\$ '
@@ -35,7 +35,7 @@ function _update_ps1() {
 	fi
 }
 
-if [ "$TERM" != "linux" ]; then
+if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
