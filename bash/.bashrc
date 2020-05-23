@@ -58,7 +58,7 @@ fi
 
 # Cygwin doesn't have dig installed by default.
 if ! is_cygwin ; then
-	alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+	alias myip="dig ANY +short myip.opendns.com @resolver1.opendns.com"
 fi
 
 # AWS CLI completion (only for Bash)
