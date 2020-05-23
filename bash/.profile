@@ -62,10 +62,10 @@ test -d "/usr/local/mysql/bin" && append_to_path "/usr/local/mysql/bin"
 test -d "$HOME/bin" && append_to_path "$HOME/bin"
 
 # SCons
-test -d "$HOME/bin/scons/bin/" && append_to_path "$HOME/bin/scons/bin/"
+test -d "$HOME/bin/scons/bin/" && append_to_path "$HOME/bin/scons/bin"
 
 # AWS CLI
-test -d "$HOME/bin/AWS-ElasticBeanstalk-CLI/eb/macosx/python2.7/" && append_to_path "$HOME/bin/AWS-ElasticBeanstalk-CLI/eb/macosx/python2.7/"
+test -d "$HOME/bin/AWS-ElasticBeanstalk-CLI/eb/macosx/python2.7" && append_to_path "$HOME/bin/AWS-ElasticBeanstalk-CLI/eb/macosx/python2.7"
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
