@@ -10,10 +10,6 @@ shopt -s no_empty_cmd_completion
 # Don't log duplicate commands to the history.
 export HISTCONTROL=ignoredups:erasedups
 
-# Git completion & prompt
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
-
 # Multiple completions using bash-completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	. $(brew --prefix)/etc/bash_completion
@@ -26,9 +22,9 @@ source ~/.bash_colors
 function _update_ps1() {
 	# Show the current branch in prompt
 	if ! is_cygwin ; then
-		if [ -f ~/powerline-shell.py ]; then
-			# Use powerline-shell to configure an awesome prompt - depends on powerline-shell
-			PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+		if [ -f "$GOPATH/bin/powerline-go" ]; then
+			# Use powerline-go to configure an awesome prompt - depends on powerline-go
+			PS1="$($GOPATH/bin/powerline-go -error $? -modules nix-shell,venv,user,host,ssh,cwd,docker,kube,perms,git,hg,jobs,exit,root,vgo)"
 		else
 			# Show the current branch in prompt - depends on git-prompt.sh
 			PS1='\[${magenta}\]\u@\h$\[${reset}\]:\W$(__git_ps1 " [* \[${green}\]%s\[${reset}\]]")\$ '
@@ -39,7 +35,7 @@ function _update_ps1() {
 	fi
 }
 
-if [ "$TERM" != "linux" ]; then
+if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
@@ -60,9 +56,6 @@ fi
 if ! is_cygwin ; then
 	alias myip="dig ANY +short myip.opendns.com @resolver1.opendns.com"
 fi
-
-# AWS CLI completion (only for Bash)
-complete -C aws_completer aws
 
 # For now, I want only Cygwin to automatically start the ssh-agent .
 if is_cygwin ; then

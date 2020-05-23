@@ -37,9 +37,9 @@
 	unstage = reset HEAD
 	uncommit = reset --soft HEAD
 	showstash = stash show -p
-	assume-unchanged = update-index --assume-unchanged
-	no-assume-unchanged = update-index --no-assume-unchanged
-	ls-assume-unchanged = "!git ls-files -v | grep ^h | awk '{print $2}'"
+	ignore-changes = update-index --skip-worktree
+	no-ignore-changes = update-index --no-skip-worktree
+	ls-ignore-changes = "!git ls-files -v | grep ^S | awk '{print $2}'"
 	last-commit-sha = rev-parse HEAD # Returns a 40-digit commit SHA
 	last-commit-short-sha = rev-parse --short HEAD # Returns a 7-digit commit SHA
 	# Credits for pretty-log go to Palesz - http://stackoverflow.com/users/88355/palesz

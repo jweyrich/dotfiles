@@ -73,9 +73,6 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Go
 test -d "$HOME/go" && export GOPATH="$HOME/go" && append_to_path "$GOPATH"
 
-# Docker
-export DOCKER_HOST=tcp://127.0.0.1:4243
-
 export PATH
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
