@@ -58,7 +58,7 @@ if ! is_cygwin ; then
 fi
 
 # AWS CLI completion (only for Bash)
-if [ ! -z $(which aws_complete) ]; then HAS_AWS_COMPLETER=true; fi
+if [ ! -z $(which aws_completer) ]; then HAS_AWS_COMPLETER=true; fi
 if [ "$HAS_AWS_COMPLETER" == true ]; then
 	complete -C aws_completer aws
 fi
