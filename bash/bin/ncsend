@@ -1,0 +1,33 @@
+#!/bin/bash
+
+usage() {
+	program=`basename $0`
+	echo "usage: $program [-h host] [-p port] [-t timeout]"
+	exit 2
+}
+
+illegal_opt() {
+	program=`basename $0`
+	echo "$program: illegal option -- $@"
+	usage
+}
+
+while [ $# -gt 0 ]
+do
+	case $1 in
+		-h) host="$2"; shift ;;
+		-p) port="$2"; shift ;;
+		-t) timeout="$2"; shift ;;
+		-h) usage ;;
+		-*|*) illegal_opt $1 ;;
+	esac
+	shift
+done
+
+if [ -z "$host" ]; then usage; fi
+if [ -z "$port" ]; then port="1234"; fi
+if [ -z "$timeout" ]; then timeout="2"; fi
+
+/usr/bin/nc -w $timeout $host $port
+
+[ $? -eq 0 ] || echo "error: can't connect"

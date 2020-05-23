@@ -1,0 +1,34 @@
+#!/bin/bash
+
+usage() {
+	program=`basename $0`
+	echo "usage: $program [-p port] [-o output-file] [-t timeout]"
+	exit 2
+}
+
+illegal_opt() {
+	program=`basename $0`
+	echo "$program: illegal option -- $@"
+	usage
+}
+
+while [ $# -gt 0 ]
+do
+	case $1 in
+		-p) port="$2"; shift ;;
+		-h) usage ;;
+		-*|*) illegal_opt $1 ;;
+	esac
+	shift
+done
+
+if [ -z "$port" ]; then port="1234"; fi
+
+if [ `uname` == "Darwin" ];
+then
+	/usr/bin/nc -l $port
+else
+	/usr/bin/nc -l vv -p $port
+fi
+
+[ $? -eq 0 ] || echo "error: no data received"
