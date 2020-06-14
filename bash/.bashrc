@@ -41,6 +41,7 @@ fi
 
 # Aliases
 alias ls="/bin/ls -CFG"
+alias vim="/usr/local/bin/nvim"
 
 # Cygwin doesn't support grep --color switch.
 if ! is_cygwin ; then

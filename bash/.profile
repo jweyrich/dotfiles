@@ -48,12 +48,15 @@ function vscode() {
 # Global
 umask 022
 
-# Subversion
-export SVN_EDITOR=/usr/bin/vim
-
 # Homebrew
 test -d "/usr/local/bin" && prepend_to_path "/usr/local/bin"
 test -d "/usr/local/sbin" && prepend_to_path "/usr/local/sbin"
+
+# LLVM/clangd
+test -d "/usr/local/opt/llvm/bin" && append_to_path "/usr/local/opt/llvm/bin"
+
+# Binaries installed with Python 3.7 such as compiledb
+test -d "$HOME/Library/Python/3.7/bin" && append_to_path "$HOME/Library/Python/3.7/bin"
 
 # MySQL
 test -d "/usr/local/mysql/bin" && append_to_path "/usr/local/mysql/bin"
@@ -63,6 +66,9 @@ test -d "$HOME/bin" && append_to_path "$HOME/bin"
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Subversion
+export SVN_EDITOR=/usr/local/bin/nvim
 
 # Go
 test -d "$HOME/go" && export GOPATH="$HOME/go" && append_to_path "$GOPATH"
