@@ -24,9 +24,9 @@ function pman() {
 	man -t "${1}" | open -f -a /Applications/Preview.app
 }
 
-# Print the current Python site-packages directory
+# Print the current Python 3 site-packages directory
 function sitepackages() {
-	python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"
+	python3 -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"
 }
 
 # Shamelessly borrowed from https://github.com/paulirish/dotfiles/blob/606d85f083/.functions#L27 - Thanks!
