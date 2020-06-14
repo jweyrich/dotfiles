@@ -14,11 +14,6 @@
 	ui = auto
 [diff]
 	algorithm = patience
-[sendemail]
-	smtpencryption = tls
-	smtpserver = smtp.gmail.com
-	smtpuser = jweyrich@gmail.com
-	smtpserverport = 587
 [alias]
 	authors = "!git log --pretty=format:'%an <%ae>' | uniq"
 	remotes = remote -v
