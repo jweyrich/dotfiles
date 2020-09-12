@@ -42,3 +42,5 @@
 	nfm = "!f(){ git -c core.fileMode=false $@; };f" # Ignore file mode changes. Example: git nfm status
 [push]
 	default = simple
+[pager]
+	branch = false
