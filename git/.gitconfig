@@ -44,3 +44,5 @@
 	default = simple
 [pager]
 	branch = false
+[commit]
+	template = ~/.stCommitMsg
