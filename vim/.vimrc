@@ -6,6 +6,9 @@
 " Set UTF-8 encoding without BOM.
 set encoding=utf-8 nobomb
 
+" Enable mouse scrolling
+set mouse=a
+
 " Show the filename in the window titlebar.
 set title
 
