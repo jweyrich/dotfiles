@@ -5,6 +5,9 @@
 
 set encoding=utf-8
 
+" Enable mouse scrolling
+set mouse=a
+
 " Show the filename in the window titlebar.
 set title
 

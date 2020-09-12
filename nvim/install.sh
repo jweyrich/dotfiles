@@ -44,4 +44,6 @@ nvim +PluginInstall +qall
 nvim -c 'CocInstall -sync coc-cmake coc-clangd coc-python coc-yaml coc-json coc-html coc-css coc-tsserver coc-highlight|q'
 
 # Ask the user to install the font that has all required glyphs.
-open "Meslo LG M Regular Nerd Font Complete.ttf"
+curl -fLo "~/Desktop/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete.ttf" \
+	"https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete.ttf"
+open "~/Desktop/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete.ttf"
