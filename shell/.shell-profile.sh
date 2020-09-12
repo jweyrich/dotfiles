@@ -55,7 +55,7 @@ test -d "/usr/local/sbin" && prepend_to_path "/usr/local/sbin"
 # LLVM/clangd
 test -d "/usr/local/opt/llvm/bin" && append_to_path "/usr/local/opt/llvm/bin"
 
-# Binaries installed with Python 3.7 such as compiledb
+# Binaries installed with pip3, specifically for Python 3.7
 test -d "$HOME/Library/Python/3.7/bin" && append_to_path "$HOME/Library/Python/3.7/bin"
 
 # MySQL
@@ -76,11 +76,3 @@ test -d "$HOME/go" && export GOPATH="$HOME/go" && append_to_path "$GOPATH"
 export PATH
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-# Execute .bashrc if it exists
-if [ "$BASH" ]; then
-	if [ -f $HOME/.bashrc ]; then
-		. $HOME/.bashrc
-	fi
-fi
-

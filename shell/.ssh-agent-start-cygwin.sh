@@ -1,4 +1,3 @@
-#!bash.exe
 export SSH_AUTH_SOCK=/tmp/.ssh-socket
 echo ;
 echo Starting connection with ssh-agent...
