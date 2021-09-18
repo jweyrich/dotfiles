@@ -96,3 +96,7 @@ cmap <expr> <Up> pumvisible() ? "\<C-p>" : "\<Up>"
 
 " Auto-reload ~/.config/nvim/init.vim after saving it.
 autocmd! BufWritePost init.vim source %
+
+" Quickly switch between buffers with ctrl-← and ctrl-→
+nnoremap <C-left> :bprev<CR>
+nnoremap <C-right> :bnext<CR>
