@@ -1,5 +1,6 @@
 #!/bin/bash
-find . -print 2>/dev/null | awk '!/\.$/ { \
+path=${1:-.}
+find $path -print 2>/dev/null | awk '!/\.$/ { \
 	for (i=1; i<NF; i++) { \
 		printf("%4s", "|") \
 	} \
