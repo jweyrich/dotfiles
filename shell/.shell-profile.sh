@@ -65,7 +65,7 @@ test -d "/usr/local/mysql/bin" && append_to_path "/usr/local/mysql/bin"
 test -d "$HOME/bin" && append_to_path "$HOME/bin"
 
 # Java
-export JAVA_HOME=$(/usr/libexec/java_home)
+test -f /usr/libexec/java_home && export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Subversion
 export SVN_EDITOR=/usr/local/bin/nvim
