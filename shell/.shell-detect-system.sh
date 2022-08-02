@@ -16,7 +16,7 @@ detect_system () {
 						DETECTED_SYSTEM="cygwin"
 					;;
 					*)
-						>&2 echo ".bashrc failed to detect which system is running"
+						>&2 echo ".shell-detect-system.sh failed to detect which system is running"
 						return 0
 					;;
 				esac
