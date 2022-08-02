@@ -30,9 +30,9 @@ detect_system () {
 detect_system
 
 is_cygwin () {
-	test "$TERM" = "cygwin"
+	test "$DETECTED_SYSTEM" = "cygwin"
 }
 
 is_macosx () {
-	test "$TERM" = "macosx"
+	test "$DETECTED_SYSTEM" = "macosx"
 }

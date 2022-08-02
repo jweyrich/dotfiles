@@ -24,7 +24,7 @@ done
 
 if [ -z "$port" ]; then port="1234"; fi
 
-if [ `uname` == "Darwin" ];
+if [ $(uname -s) = "Darwin" ];
 then
 	/usr/bin/nc -l $port
 else
