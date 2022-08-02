@@ -38,27 +38,25 @@ function cdf() {  # short for cdfinder
 # Global
 umask 022
 
-# Homebrew
-test -d "/usr/local/bin" && prepend_to_path "/usr/local/bin"
-test -d "/usr/local/sbin" && prepend_to_path "/usr/local/sbin"
-
-# LLVM/clangd
-test -d "/usr/local/opt/llvm/bin" && append_to_path "/usr/local/opt/llvm/bin"
-
-# Binaries installed with pip3, specifically for Python 3.7
-test -d "$HOME/Library/Python/3.7/bin" && append_to_path "$HOME/Library/Python/3.7/bin"
-
-# MySQL
-test -d "/usr/local/mysql/bin" && append_to_path "/usr/local/mysql/bin"
-
 # Personal utilities
 test -d "$HOME/bin" && append_to_path "$HOME/bin"
+
+# Homebrew
+test -f "/opt/homebrew/bin/brew" && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# LLVM/clangd
+test -d "/opt/homebrew/opt/llvm/bin" && append_to_path "/opt/homebrew/opt/llvm/bin"
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+# NVM - Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && source "$(brew --prefix nvm)/nvm.sh"  # This loads nvm
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && source "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 # Subversion
-export SVN_EDITOR=/usr/local/bin/nvim
+export SVN_EDITOR=vim
 
 # Go
 test -d "$HOME/go" && export GOPATH="$HOME/go" && append_to_path "$GOPATH"

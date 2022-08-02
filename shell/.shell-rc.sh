@@ -2,7 +2,7 @@ source ~/.shell-detect-system.sh
 
 # Aliases
 alias ls="/bin/ls -CFG"
-alias vim="/usr/local/bin/nvim"
+alias vim="/opt/homebrew/bin/nvim"
 
 # Cygwin doesn't support grep --color switch.
 if ! is_cygwin ; then
