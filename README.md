@@ -2,7 +2,7 @@
 
 It may not be relevant to you.
 
-## bash/install.sh
+## install.sh
 
 It installs the following:
 
