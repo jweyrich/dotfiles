@@ -48,7 +48,7 @@ test -f "/opt/homebrew/bin/brew" && eval "$(/opt/homebrew/bin/brew shellenv)"
 test -d "/opt/homebrew/opt/llvm/bin" && append_to_path "/opt/homebrew/opt/llvm/bin"
 
 # Java
-export JAVA_HOME=$(/usr/libexec/java_home)
+test -f /usr/libexec/java_home && export JAVA_HOME=$(/usr/libexec/java_home)
 
 # NVM - Node Version Manager
 export NVM_DIR="$HOME/.nvm"

@@ -9,7 +9,7 @@ cp -i .bash-prompt.sh ~/
 cp -i ../.shell-profile.sh ~/
 cp -i ../.shell-rc.sh ~/
 
-if [ ! -z $(brew --prefix) ]; then HAS_HOMEBREW=true; fi
+$(which brew 2>&1 > /dev/null) && if [[ $? = 0 && ! -z $(brew --prefix) ]]; then HAS_HOMEBREW=true; fi
 if [ ! -z $(which go) ]; then HAS_GO=true; fi
 
 if [ "$HAS_HOMEBREW" == true ]; then

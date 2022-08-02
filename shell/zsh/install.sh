@@ -5,7 +5,7 @@ cp -i .zprofile ~/
 cp -i ../.shell-profile.sh ~/
 cp -i ../.shell-rc.sh ~/
 
-if [ ! -z $(brew --prefix) ]; then HAS_HOMEBREW=true; fi
+$(which brew 2>&1 > /dev/null) && if [[ $? = 0 && ! -z $(brew --prefix) ]]; then HAS_HOMEBREW=true; fi
 if [ ! -z $(which go) ]; then HAS_GO=true; fi
 if [ ! -z $(which pip3) ]; then HAS_PIP=true; fi
 if [ ! -z $(which npm) ]; then HAS_NPM=true; fi
