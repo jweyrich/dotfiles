@@ -17,6 +17,7 @@ fi
 # Cygwin doesn't have dig installed by default.
 if ! is_cygwin ; then
 	alias myip="dig ANY +short myip.opendns.com @resolver1.opendns.com"
+	alias myip4="dig -4 ANY +short myip.opendns.com @resolver1.opendns.com"
 fi
 
 # For now, I want only Cygwin to automatically start the ssh-agent .
