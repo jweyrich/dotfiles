@@ -15,6 +15,7 @@
 [diff]
 	algorithm = patience
 [alias]
+	author-stats = shortlog --summary --numbered --all --no-merges
 	authors = "!git log --pretty=format:'%an <%ae>' | uniq"
 	remotes = remote -v
 	branches = branch -a
