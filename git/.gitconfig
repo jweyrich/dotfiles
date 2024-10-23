@@ -28,6 +28,7 @@
 	fu = fetch upstream
 	po = push origin
 	pu = push upstream
+	squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-Initial commit.}\");};f"
 	unadd = reset
 	unadd-empty = rm -r --cached # git-reset causes "fatal: Failed to resolve 'HEAD' as a valid ref."
 	unstage = reset HEAD
