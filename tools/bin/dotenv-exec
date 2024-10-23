@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #
 # Load environment variables from a dotenv file before running an executable
@@ -6,7 +6,7 @@
 #
 
 usage() {
-    echo "Usage: $(basename $0) <.env> <executable> [executable-parameters]" 1>&2
+    echo "Usage: $(basename "$0") <.env> <executable> [executable-parameters]" 1>&2
     exit 1
 }
 
@@ -15,13 +15,13 @@ if [ -z "$1" ]; then
 fi
 
 if [ ! -f "$1" ]; then
-    echo "File "$1" not found" 1>&2
+    echo "File $1 not found" 1>&2
     usage
 fi
 
 # Original source from https://stackoverflow.com/a/73589795/298054
 set -a # equivalent to: set -o allexport
-source $1
+. "$1"
 set +a # equivalent to: set +o allexport
 shift # Remove the .env argument
 exec $@ # Run the executable with all original parameters
